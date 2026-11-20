@@ -10,26 +10,15 @@
 <link rel="stylesheet" href="Css/styles.css">
 </head>
 <body>
-
-<!-- símbolo de rosa reutilizable -->
-<svg width="0" height="0" style="position:absolute">
-  <symbol id="rosa" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.4">
-    <path d="M32 8c-7 4-10 10-8 16 2 5 8 8 8 8s6-3 8-8c2-6-1-12-8-16z"/>
-    <path d="M20 20c-4 2-6 6-5 10 1 4 5 6 5 6"/>
-    <path d="M44 20c4 2 6 6 5 10-1 4-5 6-5 6"/>
-    <path d="M32 32v22"/>
-    <path d="M32 40l-7 5"/>
-    <path d="M32 47l7 5"/>
-    <path d="M25 45l-3 3"/>
-    <path d="M39 52l3 3"/>
-  </symbol>
-</svg>
-
 <header>
+  
   <div class="nav-wrap">
-    <a href="#hero" class="logo">Rosa <span>Umbra</span></a>
+    <a href="#hero" class="logo" aria-label="Rosa Umbra - Inicio">
+      <img class="logo-imagen" src="../assets/img/logo1.png" alt="">
+      <span class="logo-texto">Rosa <em>Umbra</em></span>
+    </a>
     <input type="checkbox" id="nav-toggle" class="nav-toggle">
-    <label for="nav-toggle" class="nav-toggle-label" style="display:none;">☰</label>
+    <label for="nav-toggle" class="nav-toggle-label">☰</label>
     <nav>
       <ul>
         <li><a href="#sobre-nosotros">Nosotros</a></li>
@@ -45,7 +34,7 @@
 <main>
 
   <section id="hero">
-    <svg class="rosa-hero" style="color: var(--rojo-sangre);"><use href="#rosa"/></svg>
+    <img class="rosa-hero" src="../assets/img/logo1.png" alt="">
     <h1>Rosa <em>Umbra</em></h1>
     <p class="lema">Rosas eternas de estilo gótico, hechas a mano, una a una, para historias que no se marchitan.</p>
     <a href="#catalogo" class="btn">Ver catálogo</a>
@@ -73,7 +62,7 @@
   </section>
 
   <div class="divisor" aria-hidden="true">
-    <svg viewBox="0 0 420 28"><path d="M0 14h150" stroke="#c9a227" stroke-width="1" opacity="0.5"/><path d="M270 14h150" stroke="#c9a227" stroke-width="1" opacity="0.5"/><circle cx="210" cy="14" r="4" fill="none" stroke="#c9a227" stroke-width="1.2"/><path d="M198 14l-8-6M198 14l-8 6M222 14l8-6M222 14l8 6" stroke="#c9a227" stroke-width="1"/></svg>
+    <svg viewBox="0 0 420 28"><path d="M0 14h150" stroke="#c9a227" stroke-width="1" opacity="0.5"/><path d="M270 14h150" stroke="#c9a227" stroke-width="1" opacity="0.5"/><circle cx="210" cy="14" r="4" fill="none" stroke="#9a227" stroke-width="1.2"/><path d="M198 14l-8-6M198 14l-8 6M222 14l8-6M222 14l8 6" stroke="#c9a227" stroke-width="1"/></svg>
   </div>
 
   <section id="personalizados">
@@ -138,8 +127,22 @@
   <p class="copy">© 2026 Rosa Umbra — Usme, Bogotá. Rosas eternas hechas a mano.</p>
 </footer>
 
+<!-- MASCOTA VIRTUAL ROSA UMBRA -->
+
+<div id="rosa-bat" class="rosa-bat">
+
+    <img
+        id="bat-frame"
+        src="../assets/img/bat-sprite(1).png"
+        alt="Murciélago de Rosa Umbra"
+        draggable="false"
+    >
+
+</div>
+
 <script src="JavaScript/Productos.js" defer></script>
 <script src="JavaScript/Catalogos.js" defer></script>
+<script src="JavaScript/bat.js" defer></script>
 
 </body>
 </html>

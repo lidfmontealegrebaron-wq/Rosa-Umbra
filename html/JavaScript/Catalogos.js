@@ -10,7 +10,7 @@ function crearTarjeta(producto) {
   const tarjeta = document.createElement('article');
   tarjeta.className = 'producto';
   tarjeta.innerHTML = `
-    <svg class="icono-rosa" style="color: var(--oro-antiguo);"><use href="#rosa"/></svg>
+    <img class="imagen-producto" src="${producto.imagen}" alt="${producto.nombre}">
     <h3>${producto.nombre}</h3>
     <span class="precio">${formatearPrecio(producto.precio)}</span>
     <p>${producto.descripcion}</p>
