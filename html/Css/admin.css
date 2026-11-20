@@ -1,0 +1,375 @@
+
+/* =====================================
+   ROSA UMBRA - PANEL ADMINISTRATIVO
+===================================== */
+
+:root {
+    --fondo: #100d0e;
+    --panel: #1b1617;
+    --panel-claro: #251e1e;
+    --dorado: #c9a227;
+    --dorado-claro: #e0c477;
+    --texto: #eee3d8;
+    --texto-secundario: #aa9b91;
+    --borde: rgba(201, 162, 39, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(ellipse at top, #302020 0%, transparent 55%),
+        var(--fondo);
+    color: var(--texto);
+    font-family: 'Cormorant Garamond', serif;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.admin-container {
+    width: min(1200px, 92%);
+    margin: auto;
+    padding: 55px 0;
+}
+
+/* INICIO DE SESIÓN */
+
+.login-panel {
+    width: min(100%, 440px);
+    margin: 45px auto;
+    padding: 45px 35px;
+    text-align: center;
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    box-shadow: 0 20px 60px #0008;
+}
+
+.logo-admin {
+    color: var(--dorado);
+    font-size: 3rem;
+    margin-bottom: 12px;
+}
+
+.eyebrow {
+    color: var(--dorado);
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+}
+
+.login-panel h1,
+.dashboard-header h1 {
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+    margin: 14px 0;
+}
+
+.login-panel h1 {
+    font-size: 1.7rem;
+}
+
+.login-panel > p {
+    color: var(--texto-secundario);
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+#login-form {
+    display: grid;
+    gap: 20px;
+    text-align: left;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo label {
+    color: var(--dorado-claro);
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+}
+
+.campo input {
+    width: 100%;
+    padding: 14px;
+    background: var(--panel-claro);
+    color: var(--texto);
+    border: 1px solid var(--borde);
+    outline: none;
+}
+
+.campo input:focus {
+    border-color: var(--dorado);
+}
+
+#btn-login {
+    padding: 14px;
+    background: var(--dorado);
+    color: #171111;
+    border: none;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+#btn-login:hover {
+    background: var(--dorado-claro);
+}
+
+#btn-login:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+#login-mensaje {
+    color: #e49a9a;
+    text-align: center;
+    min-height: 20px;
+}
+
+.volver {
+    display: inline-block;
+    margin-top: 28px;
+    color: var(--dorado-claro);
+    text-decoration: none;
+}
+
+.volver:hover {
+    text-decoration: underline;
+}
+
+/* PANEL PRINCIPAL */
+
+.dashboard[hidden],
+.login-panel[hidden] {
+    display: none !important;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 35px;
+    border-bottom: 1px solid var(--borde);
+}
+
+.dashboard-header h1 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.dashboard-header p {
+    color: var(--texto-secundario);
+}
+
+.btn-logout {
+    padding: 12px 20px;
+    color: var(--dorado-claro);
+    background: transparent;
+    border: 1px solid var(--borde);
+}
+
+.btn-logout:hover {
+    background: var(--panel-claro);
+}
+
+/* TARJETAS DE RESUMEN */
+
+.resumen {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin: 35px 0 50px;
+}
+
+.resumen-card {
+    padding: 25px;
+    background: var(--panel);
+    border: 1px solid var(--borde);
+}
+
+.resumen-card span {
+    display: block;
+    color: var(--texto-secundario);
+    font-size: 1rem;
+    margin-bottom: 12px;
+}
+
+.resumen-card strong {
+    color: var(--dorado-claro);
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+}
+
+/* SOLICITUDES */
+
+.solicitudes-section {
+    padding: 30px;
+    background: var(--panel);
+    border: 1px solid var(--borde);
+}
+
+.solicitudes-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.solicitudes-titulo h2 {
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+#filtro-estado,
+.estado-select {
+    padding: 11px 14px;
+    color: var(--texto);
+    background: var(--panel-claro);
+    border: 1px solid var(--borde);
+    outline: none;
+}
+
+.lista-solicitudes {
+    display: grid;
+    gap: 18px;
+}
+
+.solicitud-card {
+    padding: 22px;
+    background: var(--panel-claro);
+    border-left: 3px solid var(--dorado);
+}
+
+.solicitud-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.solicitud-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    color: var(--dorado-claro);
+}
+
+.solicitud-fecha,
+.solicitud-tipo {
+    color: var(--texto-secundario);
+    font-size: 0.95rem;
+    margin-top: 5px;
+}
+
+.solicitud-detalles {
+    display: grid;
+    gap: 9px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.solicitud-detalles strong {
+    color: var(--dorado-claro);
+}
+
+.solicitud-estado {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.solicitud-estado label {
+    color: var(--texto-secundario);
+}
+
+.mensaje-vacio {
+    padding: 35px 10px;
+    color: var(--texto-secundario);
+    text-align: center;
+}
+
+#dashboard-mensaje {
+    margin-top: 20px;
+    color: var(--dorado-claro);
+    text-align: center;
+}
+
+#dashboard-mensaje.error {
+    color: #e49a9a;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+    .resumen {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    .admin-container {
+        padding: 25px 0;
+    }
+
+    .login-panel {
+        padding: 35px 22px;
+        margin: 20px auto;
+    }
+
+    .dashboard-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .resumen {
+        gap: 10px;
+    }
+
+    .resumen-card {
+        padding: 17px;
+    }
+
+    .resumen-card strong {
+        font-size: 1.6rem;
+    }
+
+    .solicitudes-section {
+        padding: 18px 12px;
+    }
+
+    .solicitud-card {
+        padding: 17px;
+    }
+
+    .solicitudes-titulo {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    #filtro-estado {
+        width: 100%;
+    }
+}

@@ -71,7 +71,7 @@
   <div class="divisor" aria-hidden="true">
     <svg viewBox="0 0 420 28"><path d="M0 14h150" stroke="#c9a227" stroke-width="1" opacity="0.5"/><path d="M270 14h150" stroke="#c9a227" stroke-width="1" opacity="0.5"/><circle cx="210" cy="14" r="4" fill="none" stroke="#9a227" stroke-width="1.2"/><path d="M198 14l-8-6M198 14l-8 6M222 14l8-6M222 14l8 6" stroke="#c9a227" stroke-width="1"/></svg>
   </div>
-
+<!-- Formulario para solicitudes personalizadas -->
   <section id="personalizados">
     <span class="eyebrow">A tu manera</span>
     <h2>Diseña tu propio ramo</h2>
@@ -92,7 +92,121 @@
         <p>Cada pieza se arma una sola vez, para una sola persona, y queda lista para durar para siempre.</p>
       </div>
     </div>
-    <a href="#contacto" class="btn">Empezar mi diseño</a>
+     <!-- Botón para desplegar el formulario -->
+    <button
+        type="button"
+        class="btn"
+        id="abrir-formulario"
+        aria-expanded="false"
+        aria-controls="contenedor-formulario">
+        Empezar mi diseño
+    </button>
+
+    <!-- Formulario oculto inicialmente -->
+    <div id="contenedor-formulario" class="contenedor-formulario" hidden>
+
+        <div class="formulario-encabezado">
+            <span class="eyebrow">Tu creación comienza aquí</span>
+            <h3>Cuéntanos tu idea</h3>
+            <p>
+                Queremos conocer los detalles de esa pieza especial
+                que tienes en mente.
+            </p>
+        </div>
+
+        <form id="solicitud-form">
+
+            <div class="campo">
+                <label for="nombre">Nombre completo *</label>
+                <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    placeholder="¿Cómo te llamas?"
+                    maxlength="100"
+                    required>
+            </div>
+
+            <div class="campo">
+                <label for="contacto-cliente">WhatsApp o correo electrónico *</label>
+                <input
+                    type="text"
+                    id="contacto-cliente"
+                    name="contacto"
+                    placeholder="¿Cómo podemos contactarte?"
+                    maxlength="150"
+                    required>
+            </div>
+
+            <div class="campo">
+                <label for="tipoSolicitud">¿Qué deseas solicitar? *</label>
+                <select id="tipoSolicitud" name="tipoSolicitud" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="catalogo">Un producto del catálogo</option>
+                    <option value="personalizado">Un diseño personalizado</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="producto">Nombre del producto (si aplica)</label>
+                <input
+                    type="text"
+                    id="producto"
+                    name="producto"
+                    placeholder="Nombre del ramo del catálogo">
+            </div>
+
+            <div class="campo">
+                <label for="descripcion">Cuéntanos qué tienes en mente *</label>
+                <textarea
+                    id="descripcion"
+                    name="descripcion"
+                    rows="4"
+                    maxlength="2000"
+                    placeholder="Describe tu idea, ocasión o diseño..."
+                    required></textarea>
+            </div>
+
+            <div class="campo">
+                <label for="colores">Colores y características</label>
+                <input
+                    type="text"
+                    id="colores"
+                    name="colores"
+                    placeholder="Ejemplo: negro, morado, encaje...">
+            </div>
+
+            <div class="campo">
+                <label for="presupuesto">Presupuesto aproximado</label>
+                <input
+                    type="text"
+                    id="presupuesto"
+                    name="presupuesto"
+                    placeholder="Ejemplo: $50.000">
+            </div>
+
+            <div class="acciones-formulario">
+                <button type="submit" class="btn" id="btn-enviar">
+                    Enviar solicitud
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-secundario"
+                    id="cerrar-formulario">
+                    Cerrar
+                </button>
+            </div>
+
+            <p
+                id="mensaje-solicitud"
+                class="mensaje-solicitud"
+                role="status"
+                aria-live="polite">
+            </p>
+
+        </form>
+    </div>
   </section>
 
   <div class="divisor" aria-hidden="true">
@@ -150,6 +264,7 @@
 <script src="JavaScript/Productos.js" defer></script>
 <script src="JavaScript/Catalogos.js" defer></script>
 <script src="JavaScript/bat.js" defer></script>
+<script src="JavaScript/solicitudes.js" defer></script>
 
 </body>
 </html>

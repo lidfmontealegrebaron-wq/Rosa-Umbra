@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Administración | Rosa Umbra</title>
+
+    <link rel="stylesheet" href="Css/admin.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <main class="admin-container">
+
+        <!-- INICIO DE SESIÓN -->
+        <section id="login-panel" class="login-panel">
+
+            <div class="logo-admin">✦</div>
+
+            <span class="eyebrow">ROSA UMBRA</span>
+
+            <h1>Acceso privado</h1>
+
+            <p>El jardín de Rosa Umbra está reservado para su administradora.</p>
+
+            <form id="login-form">
+
+                <div class="campo">
+                    <label for="usuario">Usuario</label>
+                    <input
+                        type="text"
+                        id="usuario"
+                        name="usuario"
+                        placeholder="Tu usuario"
+                        autocomplete="username"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="password">Contraseña</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Tu contraseña"
+                        autocomplete="current-password"
+                        required
+                    >
+                </div>
+
+                <button type="submit" id="btn-login">
+                    Entrar al jardín
+                </button>
+
+                <p id="login-mensaje" role="status"></p>
+
+            </form>
+
+            <a href="index.html" class="volver">← Volver a Rosa Umbra</a>
+
+        </section>
+
+
+        <!-- PANEL ADMINISTRATIVO -->
+        <section id="dashboard" class="dashboard" hidden>
+
+            <header class="dashboard-header">
+
+                <div>
+                    <span class="eyebrow">ROSA UMBRA</span>
+                    <h1>Panel administrativo</h1>
+                    <p>Bienvenida al jardín de las creaciones.</p>
+                </div>
+
+                <button type="button" id="btn-logout" class="btn-logout">
+                    Cerrar sesión
+                </button>
+
+            </header>
+
+
+            <section class="resumen">
+
+                <article class="resumen-card">
+                    <span>Total de solicitudes</span>
+                    <strong id="total-solicitudes">0</strong>
+                </article>
+
+                <article class="resumen-card">
+                    <span>Pendientes</span>
+                    <strong id="total-pendientes">0</strong>
+                </article>
+
+                <article class="resumen-card">
+                    <span>En revisión</span>
+                    <strong id="total-revision">0</strong>
+                </article>
+
+                <article class="resumen-card">
+                    <span>Finalizadas</span>
+                    <strong id="total-finalizadas">0</strong>
+                </article>
+
+            </section>
+
+
+            <section class="solicitudes-section">
+
+                <div class="solicitudes-titulo">
+                    <div>
+                        <span class="eyebrow">GESTIÓN DE PEDIDOS</span>
+                        <h2>Solicitudes recibidas</h2>
+                    </div>
+
+                    <select id="filtro-estado">
+                        <option value="Todas">Todos los estados</option>
+                        <option value="Pendiente">Pendientes</option>
+                        <option value="En revisión">En revisión</option>
+                        <option value="Contactado">Contactados</option>
+                        <option value="Aceptado">Aceptados</option>
+                        <option value="Finalizado">Finalizados</option>
+                    </select>
+                </div>
+
+                <div id="lista-solicitudes" class="lista-solicitudes">
+                    <p class="mensaje-vacio">Cargando solicitudes...</p>
+                </div>
+
+                <p id="dashboard-mensaje" role="status"></p>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <script src="JavaScript/admin.js" defer></script>
+
+</body>
+</html>
