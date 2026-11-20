@@ -5,7 +5,7 @@
 
 // Dirección del servidor local.
 // Cuando publiquemos el backend, cambiaremos esta dirección.
-const API_URL = "http://localhost:3000/api/solicitudes";
+const API_URL = "https://rosa-umbra-backend.onrender.com/api/solicitudes";
 
 const botonAbrir = document.getElementById("abrir-formulario");
 const botonCerrar = document.getElementById("cerrar-formulario");

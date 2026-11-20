@@ -3,7 +3,7 @@
 // ROSA UMBRA - PANEL ADMINISTRATIVO
 // =====================================
 
-const API_URL = "http://localhost:3000/api";
+const API_URL = "https://rosa-umbra-backend.onrender.com/api";
 
 const formularioLogin = document.getElementById("login-form");
 const loginPanel = document.getElementById("login-panel");
