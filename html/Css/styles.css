@@ -468,4 +468,214 @@
         width: 100%;
     }
 }
+/* =================================
+   CHAT DE UMBRA - ROSA UMBRA
+================================= */
 
+.umbra-chat {
+    position: fixed;
+    right: 22px;
+    bottom: 118px;
+    box-sizing: border-box;
+    width: 350px;
+    max-width: calc(100vw - 24px);
+    height: 480px;
+    max-height: calc(100dvh - 30px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 0;
+    background:
+        linear-gradient(145deg, rgba(49, 36, 58, 0.72), transparent 35%),
+        #17131b;
+    border: 1px solid #8e709e;
+    border-radius: 18px;
+    color: #f4eaf4;
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.58),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    z-index: 9999;
+    overflow: hidden;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.umbra-chat[hidden] {
+    display: none !important;
+}
+
+.umbra-chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    height: 48px;
+    min-height: 48px;
+    padding: 8px 15px;
+    background: rgba(38, 29, 45, 0.94);
+    border-bottom: 1px solid rgba(142, 112, 158, 0.58);
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.umbra-chat-header div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.umbra-chat-name {
+    font-family: 'Cinzel', serif;
+    font-size: 15px;
+    letter-spacing: 2.4px;
+    color: #e3c9ef;
+}
+
+.umbra-chat-header small {
+    color: #c4b5c9;
+    font-size: 12px;
+    letter-spacing: 0.2px;
+}
+
+.umbra-chat-header button {
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.umbra-chat-header button:hover {
+    background: rgba(142, 112, 158, 0.18);
+    border-color: rgba(142, 112, 158, 0.55);
+}
+
+.umbra-mensajes {
+    flex: 1 1 auto;
+    min-height: 0;
+    padding: 12px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #765b83 #211926;
+}
+
+.mensaje {
+    max-width: 88%;
+    padding: 9px 11px;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 1.35;
+    white-space: pre-line;
+}
+
+.mensaje-umbra {
+    align-self: flex-start;
+    background: #30243a;
+    border: 1px solid #594365;
+    border-bottom-left-radius: 4px;
+}
+
+.mensaje-usuario {
+    align-self: flex-end;
+    background: #594365;
+    border-bottom-right-radius: 4px;
+}
+
+.umbra-opciones {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    flex-shrink: 0;
+    max-height: 125px;
+    overflow-y: auto;
+    gap: 6px;
+    padding: 8px 12px;
+    border-top: 1px solid rgba(142, 112, 158, 0.18);
+}
+
+.umbra-opciones[hidden] {
+    display: none;
+}
+
+.umbra-opciones button {
+    min-height: 48px;
+    padding: 8px 9px;
+    background: rgba(36, 28, 43, 0.92);
+    color: #e9d9ef;
+    border: 1px solid #694f78;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    font-size: 13.5px;
+    line-height: 1.25;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.umbra-opciones button:hover {
+    background: #493454;
+    border-color: #a98ab9;
+    transform: translateY(-1px);
+}
+
+.umbra-formulario {
+    display: flex;
+    flex-shrink: 0;
+    gap: 8px;
+    padding: 10px 12px;
+    border-top: 1px solid rgba(142, 112, 158, 0.32);
+}
+
+.umbra-formulario input {
+    flex: 1;
+    min-width: 0;
+    height: 42px;
+    padding: 0 12px;
+    border: 1px solid #765b83;
+    border-radius: 10px;
+    outline: none;
+    background: #211926;
+    color: white;
+    font-family: inherit;
+}
+
+.umbra-formulario input:focus {
+    border-color: #b999c8;
+    box-shadow: 0 0 0 3px rgba(142, 112, 158, 0.16);
+}
+
+.umbra-formulario button {
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 10px;
+    background: #765b83;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.umbra-formulario button:hover {
+    background: #92729f;
+}
+
+@media (max-width: 480px) {
+    .umbra-chat {
+        right: 12px;
+        bottom: 12px;
+        width: calc(100vw - 24px);
+        height: min(480px, calc(100dvh - 24px));
+        max-height: none;
+    }
+}

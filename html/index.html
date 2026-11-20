@@ -260,6 +260,62 @@
     >
 
 </div>
+<!-- CHAT DE UMBRA -->
+<section id="umbra-chat" class="umbra-chat" aria-label="Chat de ayuda" hidden>
+
+    <header class="umbra-chat-header">
+        <div>
+            <span class="umbra-chat-name">UMBRA 🦇</span>
+            <small>Guardián de Rosa Umbra</small>
+        </div>
+
+        <button type="button" id="cerrar-chat" aria-label="Cerrar chat">
+            ×
+        </button>
+    </header>
+
+    <div id="umbra-mensajes" class="umbra-mensajes" aria-live="polite">
+        <div class="mensaje mensaje-umbra">
+            ¡Hola! 🦇 Bienvenido al pequeño jardín de Rosa Umbra.
+
+            ¿Qué te gustaría descubrir hoy?
+        </div>
+    </div>
+
+    <div class="umbra-opciones">
+        <button type="button" data-pregunta="catalogo">
+            🌹 Nuestros productos
+        </button>
+
+        <button type="button" data-pregunta="personalizado">
+            🖤 Crear una flor personalizada
+        </button>
+
+        <button type="button" data-pregunta="pedido">
+            📦 Consultar un pedido
+        </button>
+
+        <button type="button" data-pregunta="contacto">
+            💌 Contacto
+        </button>
+    </div>
+
+    <form id="umbra-formulario" class="umbra-formulario">
+        <input
+            type="text"
+            id="umbra-entrada"
+            placeholder="Escribe tu pregunta..."
+            autocomplete="off"
+            aria-label="Escribe tu pregunta"
+            required
+        >
+
+        <button type="submit" aria-label="Enviar mensaje">
+            ➤
+        </button>
+    </form>
+
+</section>
 
 <script src="JavaScript/Productos.js" defer></script>
 <script src="JavaScript/Catalogos.js" defer></script>
