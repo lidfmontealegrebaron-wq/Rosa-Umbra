@@ -58,7 +58,14 @@
   <section id="catalogo">
     <span class="eyebrow" style="text-align:center;display:block;">Piezas ya creadas</span>
     <h2>Catálogo</h2>
-    <div class="grid-productos" id="grid-productos"></div>
+    <div class="catalogo-carrusel" role="region" aria-roledescription="carrusel" aria-label="Carrusel de productos">
+      <button class="flecha-carrusel anterior" type="button" aria-label="Producto anterior">&#10094;</button>
+      <div class="carrusel-ventana">
+        <div class="grid-productos" id="grid-productos"></div>
+      </div>
+      <button class="flecha-carrusel siguiente" type="button" aria-label="Producto siguiente">&#10095;</button>
+    </div>
+    <p class="estado-carrusel" id="estado-carrusel" aria-live="polite"></p>
   </section>
 
   <div class="divisor" aria-hidden="true">

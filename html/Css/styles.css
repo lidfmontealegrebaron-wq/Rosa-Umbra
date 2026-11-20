@@ -143,12 +143,41 @@
     #catalogo h2, #personalizados h2, #testimonios h2, #contacto h2{
       font-size: 2.1rem; text-align:center; margin-bottom: 3.2rem;
     }
-    .grid-productos{
+    .catalogo-carrusel{
       display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2.4rem;
+      grid-template-columns:auto minmax(0, 1fr) auto;
+      align-items:center;
+      gap:1rem;
+      max-width:860px;
+      margin:0 auto;
+    }
+    .carrusel-ventana{ min-width:0; overflow:hidden; }
+    .grid-productos{
+      display:flex;
+      transition:transform 0.4s ease;
+    }
+    .flecha-carrusel{
+      width:48px;
+      height:48px;
+      border:1px solid var(--oro-antiguo);
+      border-radius:50%;
+      background:transparent;
+      color:var(--oro-antiguo);
+      font-size:1.2rem;
+      cursor:pointer;
+      transition:background 0.25s ease, color 0.25s ease;
+    }
+    .flecha-carrusel:hover{ background:var(--oro-antiguo); color:var(--negro-vino); }
+    .estado-carrusel{
+      margin-top:1rem;
+      text-align:center;
+      color:var(--malva);
+      font-family:'Jost',sans-serif;
+      font-size:0.75rem;
+      letter-spacing:0.12em;
     }
     .producto{
+      flex:0 0 100%;
       background: var(--ciruela);
       border: 1px solid var(--linea);
       padding: 2.4rem 1.6rem 2rem;
@@ -221,12 +250,12 @@
 
     @media (prefers-reduced-motion: reduce){
       html{ scroll-behavior:auto; }
-      .producto{ transition:none; }
+      .producto, .grid-productos{ transition:none; }
     }
 
     /* ---------- responsive ---------- */
     @media (max-width: 860px){
-      .grid-productos, .pasos{ grid-template-columns: 1fr 1fr; }
+      .pasos{ grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 600px){
       .nav-wrap{ flex-wrap:wrap; }
@@ -247,7 +276,9 @@
         transition: transform 0.35s ease;
       }
       .nav-toggle:checked ~ nav ul{ transform: translateY(0); }
-      .grid-productos, .pasos{ grid-template-columns: 1fr; }
+      .pasos{ grid-template-columns: 1fr; }
+      .catalogo-carrusel{ gap:0.5rem; }
+      .flecha-carrusel{ width:40px; height:40px; }
       section{ padding: 4.5rem 1.3rem; }
     }
 

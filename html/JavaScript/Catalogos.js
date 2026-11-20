@@ -30,3 +30,34 @@ function mostrarCatalogo(lista) {
 
 // 4. Al cargar la página, mostrar todos los productos
 mostrarCatalogo(productos);
+
+const carrusel = document.querySelector('.catalogo-carrusel');
+const carruselProductos = document.getElementById('grid-productos');
+const estadoCarrusel = document.getElementById('estado-carrusel');
+let indiceProducto = 0;
+
+function actualizarCarrusel() {
+  const tarjetas = carruselProductos.children;
+  const cantidad = tarjetas.length;
+
+  carruselProductos.style.transform = `translateX(-${indiceProducto * 100}%)`;
+  estadoCarrusel.textContent = `${indiceProducto + 1} de ${cantidad}`;
+
+  Array.from(tarjetas).forEach(function (tarjeta, indice) {
+    const activo = indice === indiceProducto;
+    tarjeta.setAttribute('aria-hidden', String(!activo));
+    tarjeta.querySelector('a').tabIndex = activo ? 0 : -1;
+  });
+}
+
+carrusel.querySelector('.anterior').addEventListener('click', function () {
+  indiceProducto = (indiceProducto - 1 + productos.length) % productos.length;
+  actualizarCarrusel();
+});
+
+carrusel.querySelector('.siguiente').addEventListener('click', function () {
+  indiceProducto = (indiceProducto + 1) % productos.length;
+  actualizarCarrusel();
+});
+
+actualizarCarrusel();
